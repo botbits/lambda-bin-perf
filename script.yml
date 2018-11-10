@@ -1,0 +1,20 @@
+# Thank you for trying serverless-artillery!
+# This default script is intended to get you started quickly.
+# There is a lot more that Artillery can do.
+# You can find great documentation of the possibilities at:
+# https://artillery.io/docs/
+config:
+  phases:
+    - duration: 1
+      arrivalRate: 100
+  environments:
+  # artillery run -e ENV script.yml
+    original:
+      target: "My_StackOutputs_ServiceEndpoint/original"
+    lambdaBin:
+      target: "My_StackOutputs_ServiceEndpoint/lambdaBin"
+scenarios:
+  - name: lambda-bin-performance
+    flow:
+      - get:
+          url: "/"

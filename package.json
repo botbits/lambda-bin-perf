@@ -1,0 +1,45 @@
+{
+  "name": "lambda-bin-performance",
+  "version": "0.0.0",
+  "description": "Compare performance with and without lambda-bin.",
+  "main": "index.js",
+  "scripts": {
+    "serverless": "./node_modules/serverless/bin/serverless deploy --verbose",
+    "cleanup": "./node_modules/serverless/bin/serverless remove --verbose",
+    "perf-original": "./node_modules/artillery/bin/artillery run -e original script.yml",
+    "perf-lambdaBin": "./node_modules/artillery/bin/artillery run -e lambdaBin script.yml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/botbits/lambda-bin-perf.git"
+  },
+  "keywords": [
+    "bin-minify",
+    "lambda",
+    "aws",
+    "binary",
+    "artillery",
+    "performance"
+  ],
+  "author": "BotBits (https://github.com/botbits/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/botbits/lambda-bin-perf/issues"
+  },
+  "homepage": "https://github.com/botbits/lambda-bin-perf#readme",
+  "dependencies": {
+    "debug": "^4.1.0",
+    "lambda-bin": "^0.0.0",
+    "lambda-git": "=0.1.2"
+  },
+  "devDependencies": {
+    "artillery": "^1.6.0-24",
+    "bin-minify": "^0.1.0",
+    "fs-extra": "^7.0.0",
+    "gulp": "^4.0.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-file": "^0.4.0",
+    "serverless": "^1.32.0",
+    "tar-fs": "^1.14.0"
+  }
+}
